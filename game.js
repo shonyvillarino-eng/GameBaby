@@ -1174,8 +1174,9 @@ function switchScreen(screenName) {
 // Configuración de sonidos
 function toggleSound() {
     gameState.soundsEnabled = !gameState.soundsEnabled;
+    gameState.soundBtn = elements.soundBtn;
     elements.soundIcon.textContent = gameState.soundsEnabled ? '🔊' : '🔇';
-    gameState.soundBtn.setAttribute('aria-label', 
+    elements.soundBtn.setAttribute('aria-label', 
         gameState.soundsEnabled ? 'Desactivar sonidos' : 'Activar sonidos');
 }
 
