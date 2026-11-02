@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>¡ATRAPA TODO! - Juego Arcade Infantil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de Inicio -->
+    <div id="start-screen" class="screen active">
+        <div class="start-container">
+            <div class="game-illustration">
+                <canvas id="illustration-canvas"></canvas>
+            </div>
+            <h1>¡ATRAPA TODO!</h1>
+            <p class="subtitle">¿Cuántos puntos podés conseguir en 60 segundos?</p>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-icon babero"></div>
+                    <span class="legend-label">Babero: +10</span>
+                    <span class="legend-value">+10</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-icon chupete"></div>
+                    <span class="legend-label">Chupete: +15</span>
+                    <span class="legend-value">+15</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-icon biberon"></div>
+                    <span class="legend-label">Biberón: +20</span>
+                    <span class="legend-value">+20</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-icon caca"></div>
+                    <span class="legend-label">Caca: -15</span>
+                    <span class="legend-value negative">-15</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-icon caja"></div>
+                    <span class="legend-label">Caja: -30</span>
+                    <span class="legend-value negative">-30</span>
+                </div>
+            </div>
+            <div class="instructions">
+                <h3>Cómo jugar:</h3>
+                <ul>
+                    <li>Atrapá los objetos buenos con tu canastita</li>
+                    <li>Evitá las cacas y las cajas</li>
+                    <li>Completá los objetivos para subir de nivel</li>
+                    <li>¡El juego dura 60 segundos!</li>
+                </ul>
+            <div class="controls-info">
+                <p>📱 <strong>Celular:</strong> Toca y arrastra / Toca la pantalla</p>
+                <p>🖱️ <strong>Computadora:</strong> Flechas ← → o Mouse</p>
+            </div>
+            </div>
+            <button id="start-btn" class="big-btn">COMENZAR</button>
+            <div class="duration-info">
+                <span>Duración de la partida:</span>
+                <span class="big-number">60</span>
+                <span>segundos</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla de Juego -->
+    <div id="game-screen" class="screen">
+        <div class="game-header">
+            <div class="stat">
+                <span class="stat-label">Puntaje</span>
+                <span id="score" class="stat-value score-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Tiempo</span>
+                <span id="timer" class="stat-value timer-value">60</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Nivel</span>
+                <span id="level" class="stat-value level-value">1</span>
+            </div>
+            <div class="sound-toggle">
+                <button id="sound-btn" class="sound-btn" aria-label="Activar/Desactivar sonidos">
+                    <span id="sound-icon">🔊</span>
+                </button>
+            </div>
+        </div>
+        <div class="game-container">
+            <canvas id="game-canvas"></canvas>
+            <div class="progress-container">
+                <div class="progress-label-top">
+                    <span id="progress-text">Objetivo: 0 / 10</span>
+                </div>
+                <div class="progress-bar-wrap">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <div class="objective-display">
+                    <span class="obj-label">Objetivo:</span>
+                    <span id="objective-count">0</span>
+                    <span class="obj-separator">/</span>
+                    <span id="objective-total">10</span>
+                    <span class="obj-label">objetos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla de Resultados -->
+    <div id="result-screen" class="screen">
+        <div class="result-container">
+            <div class="result-illustration">
+                <canvas id="result-canvas"></canvas>
+            </div>
+            <h2>¡FIN DE LA PARTIDA!</h2>
+            <div class="final-score">
+                <span class="score-label">Puntaje Final</span>
+                <span id="final-score" class="big-score">0</span>
+            </div>
+            <div class="result-stats">
+                <div class="result-stat">
+                    <span class="stat-label">Nivel máximo</span>
+                    <span class="babero-item-icon"></span>
+                    <span id="final-level" class="result-value">1</span>
+                </div>
+                <div class="result-stat">
+                    <span class="stat-label">Baberos</span>
+                    <span id="final-baberos" class="result-value babero-icon">0</span>
+                </div>
+                <div class="result-stat">
+                    <span class="stat-label">Chupetes</span>
+                    <span id="final-chupetes" class="result-value chupete-icon">0</span>
+                </div>
+                <div class="result-stat">
+                    <span class="stat-label">Biberones</span>
+                    <span id="final-biberones" class="result-value biberon-icon">0</span>
+                </div>
+                <div class="result-stat">
+                    <span class="stat-label">Cacas atrapadas</span>
+                    <span id="final-cacas" class="result-value caca-icon">0</span>
+                </div>
+                <div class="result-stat">
+                    <span class="stat-label"> Cajas atrapadas</span>
+                    <span id="final-cajas" class="result-value caja-icon">0</span>
+                </div>
+            </div>
+            <button id="restart-btn" class="big-btn">VOLVER A JUGAR</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
