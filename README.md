@@ -2,6 +2,10 @@
 
 Juego arcade infantil donde el jugador controla una canastita y debe atrapar objetos relacionados con bebés, sumando puntos y evitando obstáculos.
 
+## Jugar
+
+[[Jugar en línea](https://shonyvillarino-eng.github.io/GameBaby/)]
+
 ## Características
 
 - 🎮 Controles intuitivos: pantalla táctil (celulares) o mouse/flechas (PC)
@@ -20,11 +24,28 @@ Juego arcade infantil donde el jugador controla una canastita y debe atrapar obj
 3. Completa los objetivos para subir de nivel
 4. ¡Maximiza tu puntaje en 60 segundos!
 
+## Repositorio
+
+Este proyecto está alojado en GitHub:
+- 🔗 [https://github.com/shonyvillarino-eng/GameBaby](https://github.com/shonyvillarino-eng/GameBaby)
+
 ## Publicación
 
-PuedeDeploy publicamente en Netlify mediante:
-- Drag & drop en [app.netlify.com/drop](https://app.netlify.com/drop)
-- Conectar a un repositorio Git
+Puede publicarse en Netlify mediante:
+- **Drag & drop**: Arrastra la carpeta del proyecto en [app.netlify.com/drop](https://app.netlify.com/drop)
+- **Git**: Conecta el repositorio de GitHub a Netlify
+- **CLI**: Usa `netlify deploy --prod` tras instalar Netlify CLI
+
+URL de ejemplo: https://tu-juego.netlify.app
+
+## Cómo compartir
+
+1. Publica en Netlify
+2. Copia la URL generada
+3. Genera un código QR con cualquier herramienta QR
+4. Comparte el enlace o código QR
+
+El juego se abre en cualquier navegador moderno sin instalación ni registro.
 
 ## Control de versión
 
